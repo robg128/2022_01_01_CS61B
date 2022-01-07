@@ -1,5 +1,5 @@
 public class NBody {
-    public static String imageBackground = "images/starfield.jpg";
+    private static String imageBackground = "images/starfield.jpg";
 
     /**  read form fileName to get the Radius */
     public static double readRadius(String fileName) {

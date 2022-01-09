@@ -3,7 +3,7 @@ public class LinkedListDeque<T> {
     private Node sentBack;
     private int size;
 
-    public class Node {
+    private class Node {
         private T item;
         private Node prev;
         private Node next;

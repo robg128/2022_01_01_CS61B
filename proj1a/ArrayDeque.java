@@ -1,0 +1,119 @@
+public class ArrayDeque<T> {
+    private T[] items;
+    private int size;
+    private int nextFirst;
+    private int nextLast;
+
+    public ArrayDeque() {
+        items = (T[]) new Object[8];
+        size = 0;
+        nextFirst = 0;
+        nextLast = 1;
+    }
+
+    public void resize(int capacity, int nFirst, int nLast) {
+        T[] a = (T[]) new Object[capacity];
+        if (nFirst > nLast) {
+            System.arraycopy(items, nFirst + 1, a, 0, items.length - 1 - nFirst);
+            System.arraycopy(items, 0, a, items.length - 1 - nFirst, nLast);
+        } else {
+            System.arraycopy(items, nFirst + 1, a, 0, items.length - 2);
+        }
+        items = a;
+
+        nextFirst = items.length - 1;
+        nextLast = size;
+    }
+
+    public void addFirst(T item) {
+//        if (nextFirst == (nextLast + 1) % size) {
+        if (size == items.length - 2) {
+            resize(size * 2, nextFirst, nextLast);
+        }
+        size++;
+        items[nextFirst] = item;
+        nextFirst--;
+        if (nextFirst == -1) {
+            nextFirst = items.length - 1;
+        }
+    }
+
+    public void addLast(T item) {
+        if (size == items.length - 2) {
+            resize(size * 2, nextFirst, nextLast);
+        }
+        size++;
+        items[nextLast] = item;
+        nextLast++;
+        if (nextLast == items.length) {
+            nextLast = 0;
+        }
+    }
+
+    public boolean isEmpty() {
+        if ((nextFirst + 1) % items.length == nextLast) {
+            return true;
+        }
+        return false;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public void printDeque() {
+        for (int i = (nextFirst + 1) % items.length; i % items.length != nextLast; i++) {
+            System.out.print(items[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public T removeFirst() {
+        if (isEmpty()) {
+            return null;
+        }
+
+        size--;
+        T res = items[(nextFirst + 1) % items.length];
+        items[(nextFirst + 1) % items.length] = null;
+        nextFirst = (nextFirst + 1) % items.length;
+        return res;
+    }
+
+    public T removeLast() {
+        if (isEmpty()) {
+            return null;
+        }
+
+        size--;
+        int LastIndex = nextLast - 1;
+        if (LastIndex == -1) {
+            LastIndex = items.length - 1;
+        }
+        T res = items[LastIndex];
+        items[LastIndex] = null;
+        nextLast = LastIndex;
+        return res;
+    }
+
+    public T get(int index) {
+        if (index >= size) {
+            return null;
+        }
+        int i = (nextFirst + 1) % items.length;
+        for ( ; index != 0; index--) {
+            i = (i + 1) % items.length;
+        }
+        return items[i];
+    }
+}
+
+
+
+
+
+
+
+
+
+

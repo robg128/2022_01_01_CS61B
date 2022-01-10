@@ -3,9 +3,10 @@ public class ArrayDeque<T> {
     private int size;
     private int nextFirst;
     private int nextLast;
+    private final int INIT_CAPACITY = 8;
 
     public ArrayDeque() {
-        items = (T[]) new Object[8];
+        items = (T[]) new Object[INIT_CAPACITY];
         size = 0;
         nextFirst = 0;
         nextLast = 1;
@@ -93,7 +94,7 @@ public class ArrayDeque<T> {
         items[(nextFirst + 1) % items.length] = null;
         nextFirst = (nextFirst + 1) % items.length;
 
-        if ((double)(size / items.length) < 0.25) {
+        if ((double)size / items.length < 0.25 && size > 8) {
             resizeDown();
         }
 
@@ -114,7 +115,7 @@ public class ArrayDeque<T> {
         items[lastIndex] = null;
         nextLast = lastIndex;
 
-        if ((double)(size / items.length) < 0.25) {
+        if ((double)size / items.length < 0.25 && size > 8) {
             resizeDown();
         }
 

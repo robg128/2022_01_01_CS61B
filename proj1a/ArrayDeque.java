@@ -3,9 +3,9 @@ public class ArrayDeque<T> {
     private int size;
     private int nextFirst;
     private int nextLast;
-    private final int INIT_CAPACITY = 8;
 
     public ArrayDeque() {
+        int INIT_CAPACITY = 8;
         items = (T[]) new Object[INIT_CAPACITY];
         size = 0;
         nextFirst = 0;

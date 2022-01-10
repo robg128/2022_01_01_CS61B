@@ -18,7 +18,7 @@ public class ArrayDeque<T> {
             System.arraycopy(items, nextFirst + 1, a, 0, items.length - 1 - nextFirst);
             System.arraycopy(items, 0, a, items.length - 1 - nextFirst, nextLast);
         } else {
-            System.arraycopy(items, nextFirst + 1, a, 0, items.length - 2);
+            System.arraycopy(items, nextFirst + 1, a, 0, size);
         }
         items = a;
 
@@ -68,7 +68,7 @@ public class ArrayDeque<T> {
 
     public void printDeque() {
         for (int i = (nextFirst + 1) % items.length; i % items.length != nextLast; i++) {
-            System.out.print(items[i] + " ");
+            System.out.print(items[i % items.length] + " ");
         }
         System.out.println();
     }

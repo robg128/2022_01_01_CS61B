@@ -275,7 +275,7 @@ public class IntList {
         return out.toString();
     }
 
-    public static IntList reserve(IntList A) {
+    public static IntList reverse(IntList A) {
         if (A == null) {
             return null;
         }

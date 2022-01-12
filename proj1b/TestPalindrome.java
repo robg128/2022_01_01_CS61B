@@ -1,8 +1,9 @@
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class TestPalindrome {
-    /*// You must use this palindrome, and not instantiate
+    // You must use this palindrome, and not instantiate
     // new Palindromes, or the autograder might be upset.
     static Palindrome palindrome = new Palindrome();
 
@@ -14,5 +15,41 @@ public class TestPalindrome {
             actual += d.removeFirst();
         }
         assertEquals("persiflage", actual);
-    } Uncomment this class once you've created your Palindrome class. */
+    }
+
+    @Test
+    public void TestPalindrome() {
+        String actual = "racecar";
+        assertEquals(true, palindrome.isPalindrome(actual));
+
+        actual = "aaaaaaab";
+        assertEquals(false, palindrome.isPalindrome(actual));
+
+        actual = "";
+        assertEquals(true, palindrome.isPalindrome(actual));
+
+        actual = "a";
+        assertEquals(true, palindrome.isPalindrome(actual));
+
+        actual = "cat";
+        assertEquals(false, palindrome.isPalindrome(actual));
+    }
+
+    @Test
+    public void TestPalindromeRecursion() {
+        String actual = "racecar";
+        assertEquals(true, palindrome.isPalindromeRecursion(actual));
+
+        actual = "aaaaaaab";
+        assertEquals(false, palindrome.isPalindromeRecursion(actual));
+
+        actual = "";
+        assertEquals(true, palindrome.isPalindromeRecursion(actual));
+
+        actual = "a";
+        assertEquals(true, palindrome.isPalindromeRecursion(actual));
+        palindrome.test1();
+        actual = "cat";
+        assertEquals(false, palindrome.isPalindromeRecursion(actual));
+    }
 }

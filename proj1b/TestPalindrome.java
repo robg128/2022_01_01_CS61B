@@ -48,8 +48,14 @@ public class TestPalindrome {
 
         actual = "a";
         assertEquals(true, palindrome.isPalindromeRecursion(actual));
-        palindrome.test1();
+
         actual = "cat";
         assertEquals(false, palindrome.isPalindromeRecursion(actual));
+    }
+
+    @Test
+    public void TestOffByOnePalindromeFinder() {
+        String actual = "flake";
+        assertEquals(true, palindrome.isPalindrome(actual, TestOffByOne.offByOne));
     }
 }

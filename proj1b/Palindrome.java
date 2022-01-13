@@ -41,7 +41,26 @@ public class Palindrome {
         return true;
     }
 
-    public void test1() {
-        return;
+    public boolean isPalindrome(String word, CharacterComparator cc) {
+        Deque<Character> d = new LinkedListDeque<>();
+        d = wordToDeque(word);
+        while (d.size() > 1) {
+            if (!cc.equalChars(d.removeFirst(), d.removeLast())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isPalindrome(String word, int N) {
+        Deque<Character> d = new LinkedListDeque<>();
+        d = wordToDeque(word);
+        OffByN cc = new OffByN(N);
+        while (d.size() > 1) {
+            if (!cc.equalChars(d.removeFirst(), d.removeLast())) {
+                return false;
+            }
+        }
+        return true;
     }
 }

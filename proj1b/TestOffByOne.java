@@ -33,5 +33,9 @@ public class TestOffByOne {
         a = '&';
         b = '%';
         assertEquals(true, offByOne.equalChars(a, b));
+
+        a = 'a';
+        b = 'A';
+        assertEquals(false, offByOne.equalChars(a, b));
     }
 }

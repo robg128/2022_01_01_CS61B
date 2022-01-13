@@ -10,21 +10,21 @@ public class Palindrome {
         return d;
     }
 
-    public boolean isPalindromeRecursion(String word) {
-        Deque<Character> d = wordToDeque(word);
-
-        return isPalindromeHelper(d);
-    }
-
-    public boolean isPalindromeHelper(Deque d) {
-        if (d.size() <= 1) {
-            return true;
-        }
-        if (d.removeFirst() == d.removeLast()) {
-            return isPalindromeHelper(d);
-        }
-        return false;
-    }
+//    public boolean isPalindromeRecursion(String word) {
+//        Deque<Character> d = wordToDeque(word);
+//
+//        return isPalindromeHelper(d);
+//    }
+//
+//    public boolean isPalindromeHelper(Deque d) {
+//        if (d.size() <= 1) {
+//            return true;
+//        }
+//        if (d.removeFirst() == d.removeLast()) {
+//            return isPalindromeHelper(d);
+//        }
+//        return false;
+//    }
 
     public boolean isPalindrome(String word) {
         Deque<Character> d = new LinkedListDeque<>();
@@ -52,15 +52,15 @@ public class Palindrome {
         return true;
     }
 
-    public boolean isPalindrome(String word, int N) {
-        Deque<Character> d = new LinkedListDeque<>();
-        d = wordToDeque(word);
-        OffByN cc = new OffByN(N);
-        while (d.size() > 1) {
-            if (!cc.equalChars(d.removeFirst(), d.removeLast())) {
-                return false;
-            }
-        }
-        return true;
-    }
+//    public boolean isPalindrome(String word, int N) {
+//        Deque<Character> d = new LinkedListDeque<>();
+//        d = wordToDeque(word);
+//        OffByN cc = new OffByN(N);
+//        while (d.size() > 1) {
+//            if (!cc.equalChars(d.removeFirst(), d.removeLast())) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 }

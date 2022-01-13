@@ -16,14 +16,14 @@ public class TestOffByN {
         assertEquals(false, cc5.equalChars(a, b));
     }
 
-    @Test
-    public void TestOffByNPalindromeFinder() {
-        Palindrome palindrome = new Palindrome();
-
-        String actual = "abcgf";
-        assertEquals(true, palindrome.isPalindrome(actual, 5));
-
-        actual = "aaaa";
-        assertEquals(false, palindrome.isPalindrome(actual, 5));
-    }
+//    @Test
+//    public void TestOffByNPalindromeFinder() {
+//        Palindrome palindrome = new Palindrome();
+//
+//        String actual = "abcgf";
+//        assertEquals(true, palindrome.isPalindrome(actual, 5));
+//
+//        actual = "aaaa";
+//        assertEquals(false, palindrome.isPalindrome(actual, 5));
+//    }
 }

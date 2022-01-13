@@ -35,23 +35,23 @@ public class TestPalindrome {
         assertEquals(false, palindrome.isPalindrome(actual));
     }
 
-    @Test
-    public void TestPalindromeRecursion() {
-        String actual = "racecar";
-        assertEquals(true, palindrome.isPalindromeRecursion(actual));
 
-        actual = "aaaaaaab";
-        assertEquals(false, palindrome.isPalindromeRecursion(actual));
-
-        actual = "";
-        assertEquals(true, palindrome.isPalindromeRecursion(actual));
-
-        actual = "a";
-        assertEquals(true, palindrome.isPalindromeRecursion(actual));
-
-        actual = "cat";
-        assertEquals(false, palindrome.isPalindromeRecursion(actual));
-    }
+//    public void TestPalindromeRecursion() {
+//        String actual = "racecar";
+//        assertEquals(true, palindrome.isPalindromeRecursion(actual));
+//
+//        actual = "aaaaaaab";
+//        assertEquals(false, palindrome.isPalindromeRecursion(actual));
+//
+//        actual = "";
+//        assertEquals(true, palindrome.isPalindromeRecursion(actual));
+//
+//        actual = "a";
+//        assertEquals(true, palindrome.isPalindromeRecursion(actual));
+//
+//        actual = "cat";
+//        assertEquals(false, palindrome.isPalindromeRecursion(actual));
+//    }
 
     @Test
     public void TestOffByOnePalindromeFinder() {
